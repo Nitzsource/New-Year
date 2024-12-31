@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy New Year!</title>
+    <title>Happy New Year, My Love!</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -45,11 +45,41 @@
             left: 0;
             z-index: -1;
         }
+        .wish {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .wish:nth-child(even) {
+            background: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
     <h1>Happy New Year, My Love!</h1>
     <p>This year is going to be magical with you by my side. You are my greatest blessing, and I can't wait to create even more beautiful memories with you!</p>
+    
+    <!-- Displaying the 12 Wishes -->
+    <div id="wishes">
+        <div class="wish">1. I wish for our love to grow stronger every day.</div>
+        <div class="wish">2. I wish you endless happiness and success in everything you do.</div>
+        <div class="wish">3. I wish for more unforgettable moments together, making every second count.</div>
+        <div class="wish">4. I wish for you to always feel my love and support, no matter where life takes us.</div>
+        <div class="wish">5. I wish that this year brings you joy, peace, and all your heart’s desires.</div>
+        <div class="wish">6. I wish we continue to make each other better versions of ourselves.</div>
+        <div class="wish">7. I wish for us to laugh together more than ever.</div>
+        <div class="wish">8. I wish for your dreams to come true, and I'll be there to cheer for you every step of the way.</div>
+        <div class="wish">9. I wish for us to experience even more adventures and learn together.</div>
+        <div class="wish">10. I wish for you to be as happy as you make me, every day.</div>
+        <div class="wish">11. I wish for more love, laughter, and joy in our relationship.</div>
+        <div class="wish">12. I wish for our bond to be unbreakable and everlasting.</div>
+    </div>
+
     <button id="surpriseButton">Click for a Surprise</button>
     
     <!-- Fireworks Animation -->
@@ -57,6 +87,7 @@
 
     <!-- YouTube Music Embed -->
     <iframe 
+        id="musicPlayer" 
         width="0" 
         height="0" 
         src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g" 
@@ -102,7 +133,7 @@
                 firework.forEach((particle) => {
                     ctx.beginPath();
                     ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                    ctx.fillStyle = rgba(255, 255, 255, ${particle.opacity});
+                    ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
                     ctx.fill();
                     particle.x += particle.dx;
                     particle.y += particle.dy;
@@ -114,7 +145,7 @@
         }
         drawFireworks();
 
-        // Ensure the surprise button works
+        // Surprise Button functionality
         document.getElementById("surpriseButton").addEventListener("click", function() {
             alert("You are the best thing that's ever happened to me! Happy New Year!");
         });
